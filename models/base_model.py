@@ -28,5 +28,6 @@ class BaseModel:
     def to_dict(self):
         """ return a dict ontaining all keys/values of 
         __dict__ of the instance"""
-        return self.__dict__
+        new_object = self.__dict__
+        new_object["__class__"] = "BaseModel"
 
