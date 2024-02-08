@@ -30,4 +30,4 @@ class BaseModel:
         __dict__ of the instance"""
         new_object = self.__dict__
         new_object["__class__"] = "BaseModel"
-
+        return new_object
