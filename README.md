@@ -1,4 +1,4 @@
-irBnB clone 
+#  AirBnB clone 
 ## **The console**
 
 
@@ -26,4 +26,5 @@ Our project is built and tested on Ubuntu 20.04 LTS using python3 (version 3.8.5
 2. Access AirBnb directory: <mark> cd AirBnB_clone </mark>
 3. Run hbnb(interactively):<mark> ./console </mark> and enter command
 4. Run hbnb(non-interactively):<mark> echo "<command>" | ./console.py </mark>
+
 
