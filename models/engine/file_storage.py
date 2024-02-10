@@ -7,7 +7,7 @@ that """
 class FileStorage:
     """this class is for creating"""
     __file_path = ''
-    __file_path = {}
+    __objects = {}
 
     def all(self):
         """ description for all() methode"""
