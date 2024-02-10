@@ -78,7 +78,7 @@ Classes inherited from Base Model:
 * **/test_models/test_place.py** - Contains the TestPlaceDoc class
 
 
-# Execustion 
+# Execution 
 ### In interactive mode
 ```python
 $ ./console.py
