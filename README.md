@@ -67,3 +67,53 @@ Classes inherited from Base Model:
 + `def save(self)` - serializes __objects to the JSON file (path: __file_path)
  + `def reload(self)` - deserializes the JSON file to __objects
 
+ `/tests` directory contains all unit test cases for this project : 
+
+
+  * **/test_models/test_base_model.py**- Contains the TestBaseModel and TestBaseModelDocs classes TestBaseModelDocs class
+
+* **/test_models/test_amenity.py** - Contains the TestAmenityDocs class 
+* **/test_models/test_city.py** - Contains the TestCityDocs class 
+* **/test_models/test_file_storage.py** - Contains the TestFileStorageDocs class 
+* **/test_models/test_place.py** - Contains the TestPlaceDoc class
+
+
+# Execustion 
+### In interactive mode
+```python
+$ ./console.py
+(hbnb) help
+
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+
+(hbnb) 
+(hbnb) 
+(hbnb) quit
+
+```
+
+###  In non-interactive mode
+
+```python
+$ echo "help" | ./console.py
+(hbnb)
+
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+(hbnb) 
+$
+$ cat test_help
+help
+$
+$ cat test_help | ./console.py
+(hbnb)
+
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+(hbnb) 
+$
+```
