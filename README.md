@@ -23,7 +23,7 @@ Our project is built and tested on Ubuntu 20.04 LTS using python3 (version 3.8.5
 
 # Installation 
 1.  Clone this repository:  **<mark> git clone "https://github.com/ayoub22222222/AirBnB_clone"</mark>**
-2. Access AirBnb directory: **<mark> cd AirBnB_clone </mark>**
+2.  Access AirBnb directory:  cd `AirBnB_clone` 
 3. Run hbnb (interactively):  **<mark> ./console </mark>** and enter command
 4. Run hbnb (non-interactively) :  echo "`<command>`"| ./console.py 
 
