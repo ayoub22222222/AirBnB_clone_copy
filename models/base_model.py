@@ -2,7 +2,7 @@
 """ explain the purpose of the class """
 import uuid
 from datetime import datetime
-
+import json
 
 class BaseModel:
     """description the class
@@ -17,7 +17,7 @@ class BaseModel:
         """ should print name of the class
         the id and dict """
         return "[{}] ({}) {}".format(
-                self.__class__.__name__, self.id, self.__dict__)
+                self.__class__.__name__, self.id, json.dumps(self.__dict__))
 
     def save(self):
         """ update the public instance attribute update_at
