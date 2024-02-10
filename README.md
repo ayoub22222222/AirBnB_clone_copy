@@ -1,6 +1,6 @@
 #  AirBnB clone 
 ## **The console**
-![alt text](<hbnb proejct.PNG>)
+![hbnb proejct](https://github.com/Zinebb12/Own_tests/assets/141257110/c31ad1cd-ab29-4554-a81f-a1c04ecb2c67)
 
 # Description :file_folder:
 
