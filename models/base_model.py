@@ -16,8 +16,8 @@ class BaseModel:
     def __str__(self):
         """ should print name of the class
         the id and dict """
-        return "[{:s}] ({:s}) {:s}".format(
-                BaseModel.__name__, str(self.id), str(self.__dict__))
+        return "[{}] ({}) {}".format(
+                self.__class__.__name__, self.id, self.__dict__)
 
     def save(self):
         """ update the public instance attribute update_at
@@ -27,6 +27,6 @@ class BaseModel:
     def to_dict(self):
         """ return a dict ontaining all keys/values of
         __dict__ of the instance"""
-        new_object = self.__dict__
-        new_object["__class__"] = "BaseModel"
-        return new_object
+        obt = self.__dict__
+        obt["__class__"] = "BaseModel"
+        return obt
