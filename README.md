@@ -117,3 +117,12 @@ EOF  help  quit
 (hbnb) 
 $
 ```
+
+# Authors
+[Mohammed Ayoub ESSBAI](https://github.com/ayoub22222222) 
+
+[Zineb ZID ](https://github.com/Zinebb12)
+
+# Licence 
+
+No copyright protection . 
