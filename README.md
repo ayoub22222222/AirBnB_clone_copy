@@ -25,7 +25,7 @@ Our project is built and tested on Ubuntu 20.04 LTS using python3 (version 3.8.5
 1.  Clone this repository:  **<mark> git clone "https://github.com/ayoub22222222/AirBnB_clone"</mark>**
 2. Access AirBnb directory: **<mark> cd AirBnB_clone </mark>**
 3. Run hbnb (interactively):  **<mark> ./console </mark>** and enter command
-4. Run hbnb (non-interactively) : **<mark> echo "<command>"| ./console.py </mark>**
+4. Run hbnb (non-interactively) :  echo "`<command>`"| ./console.py 
 
 # File descriptions
 
@@ -49,3 +49,20 @@ Our project is built and tested on Ubuntu 20.04 LTS using python3 (version 3.8.5
 + `def save(self)` - Updates the attribute updated_at with the current datetime
 + `def to_dict(self)` - returns a dictionary containing all keys/values of the instance
 
+Classes inherited from Base Model:
+
++ **amenity.py**
++ **city.py**
++ **place.py**
++ **review.py**
++ **state.py**
++ **user.py**
+
+`/models/engine` directory contains File Storage class that handles JASON serialization and deserialization :
+
+**file_storage.py** - serializes instances to a JSON file & deserializes back to instances
+
++ `def all(self)` - returns the dictionary __objects
++ `def new(self, obj)` - sets in __objects the obj with key .id
++ `def save(self)` - serializes __objects to the JSON file (path: __file_path)
+ + `def reload(self)` - deserializes the JSON file to __objects
