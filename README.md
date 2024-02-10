@@ -1,6 +1,6 @@
 #  AirBnB clone 
 ## **The console**
-![Alt text](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2018/6/65f4a1dd9c51265f49d0.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20240208%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240208T234023Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=a5aed6d9e0b34ba7bd44a9f30f09b0517d274d14d1a76de7b3027c703b2cc939)
+![alt text](<hbnb proejct.PNG>)
 
 # Description :file_folder:
 
@@ -66,3 +66,4 @@ Classes inherited from Base Model:
 + `def new(self, obj)` - sets in __objects the obj with key .id
 + `def save(self)` - serializes __objects to the JSON file (path: __file_path)
  + `def reload(self)` - deserializes the JSON file to __objects
+
