@@ -45,13 +45,13 @@ class BaseModel:
         return new_one
 
     def __str__(self):
-        """ should print name of the class
-        the id and dict """
+        """ Returns official string representation"""
+
         c_name = self.__class__.__name__
         return "[{}] ({}) {}".format(c_name, self.id, self.__dict__)
 
     def __repr__(self):
-        """ string representation of the
-        the result"""
+        """ Returns string representation of the result"""
+
         return ("[{}] ({}) {}".format(
                 self.__class__.__name__, self.id, self.__dict__))
