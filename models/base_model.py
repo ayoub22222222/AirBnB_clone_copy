@@ -36,9 +36,8 @@ class BaseModel:
         models.storage.save()
 
     def to_dict(self):
-        """
-        Returns a dictionary containing key/value of __dict__ for an instance
-        """
+        """Returns a dictionnary containing all keys/values of __dict__"""
+
         new_one = self.__dict__.copy()
         new_one['__class__'] = self.__class__.__name__
         new_one['updated_at'] = self.updated_at.strftime("%Y-%m-%dT%H:%M:%S.%f")
