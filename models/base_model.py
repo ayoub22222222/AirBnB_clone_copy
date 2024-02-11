@@ -9,8 +9,8 @@ class BaseModel:
     compenent
     """
     id = str(uuid.uuid4())
-    created_at = datetime.now().isoformat()
-    updated_at = datetime.now().isoformat()
+    created_at = datetime.now()
+    updated_at = datetime.now()
 
     def __str__(self):
         """ should print name of the class
@@ -44,6 +44,6 @@ class BaseModel:
                 key: value for key,
                 value in new_ob.items() if key not in comp_list}
         new_one['__class__'] = self.__class__.__name__
-        new_one['updated_at'] = self.updated_at
-        new_one['created_at'] = self.created_at
+        new_one['updated_at'] = self.updated_at.isoformat()
+        new_one['created_at'] = self.created_at.isoformat()
         return new_one
