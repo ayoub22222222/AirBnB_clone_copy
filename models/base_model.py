@@ -6,7 +6,8 @@ import models
 
 
 class BaseModel:
-    """description the class
+    """
+    description the class
     compenent
     """
     def __init__(self, *args, **kwargs):
@@ -33,8 +34,10 @@ class BaseModel:
                     setattr(self, i, j)
 
     def save(self):
-        """ update the public instance attribute update_at
-        with the current date time """
+        """ 
+        update the public instance attribute update_at
+        with the current date time 
+        """
         self.updated_at = datetime.now()
         models.storage.save()
 
@@ -44,9 +47,9 @@ class BaseModel:
         """
         new_one = self.__dict__.copy()
         new_one['__class__'] = self.__class__.__name__
-        new_one['updated_at'] = self.updated_at.strftime("%Y-%m-%dT%H:%M:%S.%f")
-        new_one['created_at'] = self.created_at.strftime("%Y-%m-%dT%H:%M:%S.%f")
-        return new_one
+        new_one['updated_at'] = self.updated_at.isoformat()
+        new_one['created_at'] = self.created_at.isoformat()
+        return (new_one)
 
     def __str__(self):
         """ should print name of the class
