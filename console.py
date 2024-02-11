@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" file python description """
+""" Module for the entry point of the command interpreter """
 import cmd
 
 
