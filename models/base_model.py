@@ -26,7 +26,7 @@ class BaseModel:
                     kwargs["created_at"], "%Y-%m-%dT%H:%M:%S.%f")
             kwargs["updated_at"] = datetime.strptime(
                     kwargs["updated_at"], "%Y-%m-%dT%H:%M:%S.%f")
-            for i, j in kawargs.items():
+            for i, j in kwargs.items():
                 if "__class__" not in i:
                     setattr(self, i, j)
 
