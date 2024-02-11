@@ -23,13 +23,12 @@ class FileStorage:
     def save(self):
         """ description for save() methode serelize"""
         fl_pth = FileStorage.__file_path
-        dt_dct = FileStorage.__objects
-        store_dict = {
-                key: value for key,
-                value in dt_dct.items() key = value.to_dict()}
+        dct = {}
+        for key, value in fl_pth.items():
+            dct[key] = value.to_dict()
 
         with open(fl_pth, mode='w', encoding="UTF8") as f:
-            json.dump(store_dict, f)
+            json.dump(dct, f)
 
     def reload(self):
         """description for reload methode decerilize"""
