@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" explain the purpose of the class """
+"""This is the base models script """
 import uuid
 from datetime import datetime
 import models
