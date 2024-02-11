@@ -5,6 +5,7 @@ import cmd
 
 class HBNBCommand(cmd.Cmd):
     """class description"""
+    prompt = '(hbnb) '
 
     def do_EOF(self):
         """description for EOF methode"""
