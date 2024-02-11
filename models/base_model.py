@@ -6,9 +6,8 @@ import models
 
 
 class BaseModel:
-    """description the class
-    compenent
-    """
+    """Class from which all other classes will inherit """
+
     def __init__(self, *args, **kwargs):
         """this class is about to bla
         bla and it conatin tree instance
