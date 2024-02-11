@@ -9,14 +9,12 @@ class BaseModel:
     """Class from which all other classes will inherit """
 
     def __init__(self, *args, **kwargs):
-        """this class is about to bla
-        bla and it conatin tree instance
-        attribute
+        """Initialization of the base model 
         args:
-            param: str id
-            param2: ctreated_at time
-            parame3: updated_at time
+            - *args: list of arguments
+            - **kwargs: dict of the key-values arguments
         """
+
         if (len(kwargs) == 0):
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
