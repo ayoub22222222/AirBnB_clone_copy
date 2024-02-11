@@ -13,12 +13,6 @@ class BaseModel:
         self.created_at = datetime.today()
         self.updated_at = datetime.today()
 
-    def __str__(self):
-        """ should print name of the class
-        the id and dict """
-        c_name = self.__class__.__name__
-        return "[{}] ({}) {}".format(c_name, self.id, self.__dict__)
-
     def save(self):
         """ update the public instance attribute update_at
         with the current date time """
@@ -33,3 +27,9 @@ class BaseModel:
         new_one['updated_at'] = self.updated_at.isoformat()
         new_one['created_at'] = self.created_at.isoformat()
         return new_one
+
+    def __str__(self):
+        """ should print name of the class
+        the id and dict """
+        c_name = self.__class__.__name__
+        return "[{}] ({}) {}".format(c_name, self.id, self.__dict__)
