@@ -12,7 +12,7 @@ class HBNBCommand(cmd.Cmd):
         return True
 
     def emptyline(self):
-        """decription of emptyline methode"""
+        """Do nothing upon receiving an empty line"""
         pass
 
     def do_quit(self, line):
