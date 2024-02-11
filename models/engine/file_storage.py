@@ -7,7 +7,7 @@ import models
 
 class FileStorage:
     """this class is for creating"""
-    __file_path = ''
+    __file_path = 'file.json'
     __objects = {}
 
     def all(self):
