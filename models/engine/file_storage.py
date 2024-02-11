@@ -7,7 +7,7 @@ import models
 
 class FileStorage:
     """this class is for creating"""
-    __file_path = 'file.json'
+    __file_path = "file.json"
     __objects = {}
 
     def all(self):
@@ -16,18 +16,17 @@ class FileStorage:
 
     def new(self, obj):
         """description for new() methode """
-        i = str(obj.__class__.__name__) + "." + str(obj)
+        i = str(obj.__class__.__name__) + "." + str(obj.id)
         val_dct = obj
         FileStorage.__objects[i] = val_dct
 
     def save(self):
         """ description for save() methode serelize"""
-        fl_pth = FileStorage.__file_path
         dct = {}
-        for key, value in fl_pth.items():
+        for key, value in FileStorage.__objects.items():
             dct[key] = value.to_dict()
 
-        with open(fl_pth, mode='w', encoding="UTF8") as f:
+        with open(FileStorage.__file_path, mode='w', encoding="UTF8") as f:
             json.dump(dct, f)
 
     def reload(self):
@@ -37,7 +36,7 @@ class FileStorage:
                 FileStorage.__objects = json.load(f)
             for key, value in FileStorage.__objects.items():
                 cls_name = value["__class__"]
-                cls_name = models.classes[class_name]
+                cls_name = models.classes[cls_name]
                 FileStorage.__objects[key] = cls_name(**value)
             except FileNotFoundError:
                 pass

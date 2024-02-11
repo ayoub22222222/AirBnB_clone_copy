@@ -44,8 +44,8 @@ class BaseModel:
         """
         new_one = self.__dict__.copy()
         new_one['__class__'] = self.__class__.__name__
-        new_one['updated_at'] = self.updated_at.isoformat()
-        new_one['created_at'] = self.created_at.isoformat()
+        new_one['updated_at'] = self.updated_at.strftime("%Y-%m-%dT%H:%M:%S.%f")
+        new_one['created_at'] = self.created_at.strftime("%Y-%m-%dT%H:%M:%S.%f")
         return new_one
 
     def __str__(self):
