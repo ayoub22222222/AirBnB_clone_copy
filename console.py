@@ -20,7 +20,7 @@ class HBNBCommand(cmd.Cmd):
         return True
 
     def help_quit(self):
-        """"description for help_quit methode"""
+        """"Provide help to quit the program"""
         print("Quit command to exit the program")
 
 
