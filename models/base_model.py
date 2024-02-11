@@ -21,10 +21,10 @@ class BaseModel:
                 '__module__', '__doc__', '__str__',
                 '__dict__', 'to_dict', '__weakref__', 'save']
         filter_dict = {
-                key:value for key,
+                key: value for key,
                 value in copy_dict.items() if key not in comp_list}
         return "[{}] ({}) {}".format(
-                self.__class__.__name__, self.id, self.__class__.__dict__)
+                self.__class__.__name__, self.id, filter_dict)
 
     def save(self):
         """ update the public instance attribute update_at
@@ -41,7 +41,7 @@ class BaseModel:
         new_ob = self.__class__.__dict__.copy()
         new_ob.update(self.__dict__)
         new_one = {
-                key:value for key,
+                key: value for key,
                 value in new_ob.items() if key not in comp_list}
         new_one['__class__'] = self.__class__.__name__
         new_one['updated_at'] = self.updated_at
