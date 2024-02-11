@@ -9,8 +9,8 @@ class BaseModel:
     compenent
     """
     id = str(uuid.uuid4())
-    created_at = datetime.now()
-    updated_at = datetime.now()
+    created_at = datetime.now().isoformat()
+    updated_at = datetime.now().isoformat()
 
     def __str__(self):
         """ should print name of the class
@@ -29,7 +29,7 @@ class BaseModel:
     def save(self):
         """ update the public instance attribute update_at
         with the current date time """
-        self.updated_at = datetime.now().isoformat()
+        self.updated_at = datetime.now()
 
     def to_dict(self):
         """
