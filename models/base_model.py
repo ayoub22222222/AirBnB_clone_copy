@@ -44,6 +44,6 @@ class BaseModel:
                 key: value for key,
                 value in new_ob.items() if key not in comp_list}
         new_one['__class__'] = self.__class__.__name__
-        new_one['updated_at'] = self.updated_at.isoformat()
-        new_one['created_at'] = self.created_at.isoformat()
+        new_one['updated_at'] = self.updated_at
+        new_one['created_at'] = self.created_at
         return new_one
