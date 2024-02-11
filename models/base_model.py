@@ -16,8 +16,8 @@ class BaseModel:
     def __str__(self):
         """ should print name of the class
         the id and dict """
-        return "[{}] ({}) {}".format(
-                self.__class__.__name__, self.id, self.__dict__)
+        c_name = self.__class__.__name__
+        return "[{}] ({}) {}".format(c_name, self.id, self.__dict__)
 
     def save(self):
         """ update the public instance attribute update_at
