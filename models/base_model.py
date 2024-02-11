@@ -11,6 +11,24 @@ class BaseModel:
     id = str(uuid.uuid4())
     created_at = datetime.now().isoformat()
     updated_at = datetime.now().isoformat()
+    def __init__(self, *args, **kwargs):
+            if kwargs:
+                if '__class__' in kwargs:
+                    del kwargs['__class__']
+                if 'created_at' in kwargs:
+                    kwargs['created_at'] = datetime.strptime(
+                        kwargs['created_at'], '%Y-%m-%dT%H:%M:%S.%f')
+                if 'updated_at' in kwargs:
+                    kwargs['updated_at'] = datetime.strptime(
+                        kwargs['updated_at'], '%Y-%m-%dT%H:%M:%S.%f')
+
+                for key, value in kwargs.items():
+                    setattr(self, key, value)
+
+            else:
+                self.id = str(uuid.uuid4())
+                self.created_at = datetime.now()
+                self.updated_at = datetime.now()
 
     def __str__(self):
         """ should print name of the class
