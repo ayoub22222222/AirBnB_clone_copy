@@ -8,7 +8,7 @@ class BaseModel:
     """description the class
     compenent
     """
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
         """this class is about to bla
         bla and it conatin tree instance
         attribute
@@ -17,14 +17,23 @@ class BaseModel:
             param2: ctreated_at time
             parame3: updated_at time
         """
-        self.id = str(uuid.uuid4())
-        self.created_at = datetime.today()
-        self.updated_at = datetime.today()
+        if (len(kwargs) == 0):
+            self.id = str(uuid.uuid4())
+            self.created_at = datetime.now()
+            self.updated_at = datetime.now()
+        else:
+            kwargs["created_at"] = datetime.strptime(
+                    kwargs["created_at"], "%Y-%m-%dT%H:%M:%S.%f")
+            kwargs["updated_at"] = datetime.strptime(
+                    kwargs["updated_at"], "%Y-%m-%dT%H:%M:%S.%f")
+            for i, j in kawargs.items():
+                if "__class__" not in i:
+                    setattr(self, i, j)
 
     def save(self):
         """ update the public instance attribute update_at
         with the current date time """
-        self.updated_at = datetime.today()
+        self.updated_at = datetime.now()
 
     def to_dict(self):
         """
