@@ -11,30 +11,12 @@ class BaseModel:
     id = str(uuid.uuid4())
     created_at = datetime.now().isoformat()
     updated_at = datetime.now().isoformat()
-    def __init__(self, *args, **kwargs):
-            if kwargs:
-                if '__class__' in kwargs:
-                    del kwargs['__class__']
-                if 'created_at' in kwargs:
-                    kwargs['created_at'] = datetime.strptime(
-                        kwargs['created_at'], '%Y-%m-%dT%H:%M:%S.%f')
-                if 'updated_at' in kwargs:
-                    kwargs['updated_at'] = datetime.strptime(
-                        kwargs['updated_at'], '%Y-%m-%dT%H:%M:%S.%f')
-
-                for key, value in kwargs.items():
-                    setattr(self, key, value)
-
-            else:
-                self.id = str(uuid.uuid4())
-                self.created_at = datetime.now()
-                self.updated_at = datetime.now()
 
     def __str__(self):
         """ should print name of the class
         the id and dict """
-        copy_dict = self.__class__.__dict__.copy()
-        copy_dict.update(self.__dict__)
+        copy_dict = self.__dict__.copy()
+        copy_dict.update(self.__class__.__dict__)
         comp_list = [
                 '__module__', '__doc__', '__str__',
                 '__dict__', 'to_dict', '__weakref__', 'save']
@@ -47,20 +29,20 @@ class BaseModel:
     def save(self):
         """ update the public instance attribute update_at
         with the current date time """
-        self.updated_at = datetime.now()
+        self.updated_at = datetime.now().isoformat()
 
     def to_dict(self):
         """
         Returns a dictionary containing key/value of __dict__ for an instance
         """
-        comp_list = [
+        comp_list1 = [
                 '__module__', '__doc__', '__str__',
                 '__dict__', 'to_dict', '__weakref__', 'save']
-        new_ob = self.__class__.__dict__.copy()
-        new_ob.update(self.__dict__)
+        new_ob = self.__dict__.copy()
+        new_ob.update(self.__class__.__dict__)
         new_one = {
                 key: value for key,
-                value in new_ob.items() if key not in comp_list}
+                value in new_ob.items() if key not in comp_list1}
         new_one['__class__'] = self.__class__.__name__
         new_one['updated_at'] = self.updated_at
         new_one['created_at'] = self.created_at
