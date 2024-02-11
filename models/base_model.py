@@ -41,3 +41,9 @@ class BaseModel:
         the id and dict """
         c_name = self.__class__.__name__
         return "[{}] ({}) {}".format(c_name, self.id, self.__dict__)
+
+    def __repr__(self):
+        """ string representation of the
+        the result"""
+        return ("[{}] ({}) {}".format(
+                self.__class__.__name__, self.id, self.__dict__))
