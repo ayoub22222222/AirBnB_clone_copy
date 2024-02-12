@@ -6,17 +6,10 @@ import models
 
 
 class BaseModel:
-<<<<<<< HEAD
-    """
-    description the class
-    compenent
-    """
-=======
     """Class from which all other classes will inherit """
 
->>>>>>> 4cdaeb91a1a8cd0e68f335e3f81ed283240bbed0
     def __init__(self, *args, **kwargs):
-        """Initialization of the base model 
+        """Initialization of the base model
         args:
             - *args: list of arguments
             - **kwargs: dict of the key-values arguments
@@ -37,21 +30,12 @@ class BaseModel:
                     setattr(self, i, j)
 
     def save(self):
-<<<<<<< HEAD
-        """ 
-        update the public instance attribute update_at
-        with the current date time 
-        """
-=======
         """ update the public instance attribute update_at"""
-
->>>>>>> 4cdaeb91a1a8cd0e68f335e3f81ed283240bbed0
         self.updated_at = datetime.now()
         models.storage.save()
 
     def to_dict(self):
         """Returns a dictionnary containing all keys/values of __dict__"""
-
         new_one = self.__dict__.copy()
         new_one['__class__'] = self.__class__.__name__
         new_one['updated_at'] = self.updated_at.isoformat()
@@ -60,7 +44,6 @@ class BaseModel:
 
     def __str__(self):
         """ Returns official string representation"""
-
         c_name = self.__class__.__name__
         return "[{}] ({}) {}".format(c_name, self.id, self.__dict__)
 
