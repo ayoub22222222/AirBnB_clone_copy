@@ -1,26 +1,26 @@
 #!/usr/bin/python3
-""" file python description """
+""" Module for the entry point of the command interpreter """
 import cmd
 
 
 class HBNBCommand(cmd.Cmd):
-    """class description"""
+    """Class for the command interpreter"""
     prompt = '(hbnb) '
 
     def do_EOF(self):
-        """description for EOF methode"""
+        """Exits console"""
         return True
 
     def emptyline(self):
-        """decription of emptyline methode"""
+        """Do nothing upon receiving an empty line"""
         pass
 
     def do_quit(self, line):
-        """description of quit methode"""
+        """Quit command to exit the program"""
         return True
 
     def help_quit(self):
-        """"description for help_quit methode"""
+        """"Provide help"""
         print("Quit command to exit the program")
 
 

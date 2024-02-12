@@ -1,24 +1,27 @@
 #!/usr/bin/python3
-""" explain the purpose of the class """
+"""This is the base models script """
 import uuid
 from datetime import datetime
 import models
 
 
 class BaseModel:
+<<<<<<< HEAD
     """
     description the class
     compenent
     """
+=======
+    """Class from which all other classes will inherit """
+
+>>>>>>> 4cdaeb91a1a8cd0e68f335e3f81ed283240bbed0
     def __init__(self, *args, **kwargs):
-        """this class is about to bla
-        bla and it conatin tree instance
-        attribute
+        """Initialization of the base model 
         args:
-            param: str id
-            param2: ctreated_at time
-            parame3: updated_at time
+            - *args: list of arguments
+            - **kwargs: dict of the key-values arguments
         """
+
         if (len(kwargs) == 0):
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
@@ -34,17 +37,21 @@ class BaseModel:
                     setattr(self, i, j)
 
     def save(self):
+<<<<<<< HEAD
         """ 
         update the public instance attribute update_at
         with the current date time 
         """
+=======
+        """ update the public instance attribute update_at"""
+
+>>>>>>> 4cdaeb91a1a8cd0e68f335e3f81ed283240bbed0
         self.updated_at = datetime.now()
         models.storage.save()
 
     def to_dict(self):
-        """
-        Returns a dictionary containing key/value of __dict__ for an instance
-        """
+        """Returns a dictionnary containing all keys/values of __dict__"""
+
         new_one = self.__dict__.copy()
         new_one['__class__'] = self.__class__.__name__
         new_one['updated_at'] = self.updated_at.isoformat()
@@ -52,13 +59,13 @@ class BaseModel:
         return (new_one)
 
     def __str__(self):
-        """ should print name of the class
-        the id and dict """
+        """ Returns official string representation"""
+
         c_name = self.__class__.__name__
         return "[{}] ({}) {}".format(c_name, self.id, self.__dict__)
 
     def __repr__(self):
-        """ string representation of the
-        the result"""
+        """ Returns string representation of the result"""
+
         return ("[{}] ({}) {}".format(
                 self.__class__.__name__, self.id, self.__dict__))
